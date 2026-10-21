@@ -262,11 +262,19 @@
 .sk-feat .no{font:700 .74rem 'Manrope';color:var(--red);letter-spacing:.12em}
 .sk-feat h3{font-size:1.08rem;margin:12px 0 8px}
 .sk-feat p{color:var(--muted);font-size:.92rem}
-.sk-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.sk-gallery figure{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg)}
-.sk-gallery img{width:100%;aspect-ratio:1/1;object-fit:cover}
-.sk-gallery figcaption{padding:14px 18px;font-size:.9rem;color:var(--muted)}
-.sk-gallery figcaption b{color:var(--ink)}
+.sk-carousel{max-width:660px;margin:0 auto}
+.sk-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;border:1px solid var(--line);border-radius:14px;background:var(--bg);scrollbar-width:none}
+.sk-track::-webkit-scrollbar{display:none}
+.sk-slide{flex:0 0 100%;scroll-snap-align:start;margin:0}
+.sk-slide img{width:100%;height:auto}
+.sk-slide figcaption{padding:14px 18px;font-size:.9rem;color:var(--muted);border-top:1px solid var(--line)}
+.sk-slide figcaption b{color:var(--ink)}
+.sk-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:16px}
+.sk-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);font-size:1.2rem;line-height:1;cursor:pointer;display:grid;place-items:center;color:var(--ink)}
+.sk-btn:hover{border-color:var(--red);color:var(--red)}
+.sk-dots{display:flex;gap:8px}
+.sk-dot{width:9px;height:9px;border-radius:50%;background:var(--line);border:0;padding:0;cursor:pointer}
+.sk-dot.on{background:var(--red)}
 .sk-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .sk-step{border-top:3px solid var(--red);padding:20px 4px 0}
 .sk-step b{font:800 1.6rem 'Manrope';color:var(--red)}
@@ -280,7 +288,7 @@
 .sk-review .who b{display:block;font-family:'Manrope';font-size:.98rem}
 .sk-review .who span{color:var(--muted);font-size:.85rem}
 @media(max-width:900px){.sk-hero{grid-template-columns:1fr}.sk-feat-grid{grid-template-columns:1fr 1fr}.sk-steps{grid-template-columns:1fr}}
-@media(max-width:640px){.sk-feat-grid,.sk-gallery,.sk-review-grid{grid-template-columns:1fr}.sk-reviews{padding:30px 22px}}
+@media(max-width:640px){.sk-feat-grid,.sk-review-grid{grid-template-columns:1fr}.sk-reviews{padding:30px 22px}}
 </style>
 <script type="application/ld+json">
 {
@@ -378,11 +386,19 @@
 
   <section class="sk-section">
     <div class="section-head"><div><p class="eyebrow">Galeri produk</p><h2>Bentuk perangkat SanitasiKita.</h2></div><p>Dokumentasi materi produk: model dinding, model meja, spesifikasi, hingga solusi kiosk untuk instansi.</p></div>
-    <div class="sk-gallery">
-      <figure><img src="/assets/sanitasikita-tablet-dinding.jpg" alt="Tablet Survei SanitasiKita model dinding layar sentuh 10 inci" loading="lazy" width="1080" height="1080"><figcaption><b>Model Dinding</b> — Tablet survei 10 inci dengan breket dinding; hemat tempat untuk area toilet dan lorong layanan.</figcaption></figure>
-      <figure><img src="/assets/sanitasikita-pilihan-pemasangan.jpg" alt="Pilihan pemasangan SanitasiKita: breket dinding dan stand meja" loading="lazy" width="1080" height="1080"><figcaption><b>Pilihan Pemasangan</b> — Fleksibel mengikuti ruang pelayanan: breket dinding atau stand meja.</figcaption></figure>
-      <figure><img src="/assets/sanitasikita-spesifikasi.jpg" alt="Spesifikasi produk Tablet Survei Kepuasan Pelanggan SanitasiKita" loading="lazy" width="1080" height="1080"><figcaption><b>Spesifikasi Produk</b> — Plat besi 1,2 mm, desain modern, custom branding, report &amp; export data.</figcaption></figure>
-      <figure><img src="/assets/sanitasikita-kiosk.jpg" alt="Solusi kiosk survei kepuasan untuk instansi dari Smart Indonesia" loading="lazy" width="1080" height="1080"><figcaption><b>Solusi Kiosk</b> — Untuk instansi yang membutuhkan unit berdiri dengan desain custom dan integrasi software.</figcaption></figure>
+    <div class="sk-carousel">
+      <div class="sk-track" id="skTrack">
+        <figure class="sk-slide"><img src="/assets/sanitasikita-tablet-survei.jpg" alt="Tablet Survei Kepuasan SanitasiKita — dengar pelanggan, tingkatkan pelayanan" width="1080" height="1080"><figcaption><b>Tablet Survei Kepuasan</b> — Dengar pelanggan, tingkatkan pelayanan. Layar sentuh 10 inci, OS Android, bisa custom.</figcaption></figure>
+        <figure class="sk-slide"><img src="/assets/sanitasikita-tablet-dinding.jpg" alt="Tablet Survei SanitasiKita model dinding layar sentuh 10 inci" loading="lazy" width="1080" height="1080"><figcaption><b>Model Dinding</b> — Tablet survei 10 inci dengan breket dinding; hemat tempat untuk area toilet dan lorong layanan.</figcaption></figure>
+        <figure class="sk-slide"><img src="/assets/sanitasikita-pilihan-pemasangan.jpg" alt="Pilihan pemasangan SanitasiKita: breket dinding dan stand meja" loading="lazy" width="1080" height="1080"><figcaption><b>Pilihan Pemasangan</b> — Fleksibel mengikuti ruang pelayanan: breket dinding atau stand meja.</figcaption></figure>
+        <figure class="sk-slide"><img src="/assets/sanitasikita-spesifikasi.jpg" alt="Spesifikasi produk Tablet Survei Kepuasan Pelanggan SanitasiKita" loading="lazy" width="1080" height="1080"><figcaption><b>Spesifikasi Produk</b> — Plat besi 1,2 mm, desain modern, custom branding, report &amp; export data.</figcaption></figure>
+        <figure class="sk-slide"><img src="/assets/sanitasikita-kiosk.jpg" alt="Solusi kiosk survei kepuasan untuk instansi dari Smart Indonesia" loading="lazy" width="1080" height="1080"><figcaption><b>Solusi Kiosk</b> — Untuk instansi yang membutuhkan unit berdiri dengan desain custom dan integrasi software.</figcaption></figure>
+      </div>
+      <div class="sk-nav">
+        <button class="sk-btn" type="button" id="skPrev" aria-label="Foto sebelumnya">‹</button>
+        <div class="sk-dots" id="skDots"></div>
+        <button class="sk-btn" type="button" id="skNext" aria-label="Foto berikutnya">›</button>
+      </div>
     </div>
   </section>
 
@@ -441,6 +457,15 @@
 </footer>
 <script>
 (function(){var b=document.querySelector('.art-menu-btn'),n=document.querySelector('.art-mobile-nav');if(b&&n){b.addEventListener('click',function(){var o=n.hidden;n.hidden=!o;b.setAttribute('aria-expanded',String(!o));b.textContent=o?'✕':'☰';});}})();
+</script>
+<script>
+(function(){var t=document.getElementById('skTrack');if(!t)return;var slides=t.children.length,dots=document.getElementById('skDots');
+for(var i=0;i<slides;i++){var d=document.createElement('button');d.className='sk-dot'+(i===0?' on':'');d.type='button';d.setAttribute('aria-label','Ke foto '+(i+1));(function(n){d.addEventListener('click',function(){t.scrollTo({left:n*t.clientWidth,behavior:'smooth'});});})(i);dots.appendChild(d);}
+function cur(){return Math.round(t.scrollLeft/t.clientWidth);}
+function sync(){var c=cur();for(var i=0;i<dots.children.length;i++)dots.children[i].classList.toggle('on',i===c);}
+t.addEventListener('scroll',function(){window.requestAnimationFrame(sync);},{passive:true});
+document.getElementById('skPrev').addEventListener('click',function(){var n=(cur()-1+slides)%slides;t.scrollTo({left:n*t.clientWidth,behavior:'smooth'});});
+document.getElementById('skNext').addEventListener('click',function(){var n=(cur()+1)%slides;t.scrollTo({left:n*t.clientWidth,behavior:'smooth'});});})();
 </script>
 </body>
 </html>
