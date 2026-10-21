@@ -173,13 +173,38 @@
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
   
+    .pf-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:26px}
+    .pf-strip a{position:relative;display:block;border-radius:8px;overflow:hidden;aspect-ratio:4/3;background:var(--surface-2)}
+    .pf-strip img{width:100%;height:100%;object-fit:cover;display:block}
+    .pf-strip .pf-play{position:absolute;right:8px;bottom:8px;background:var(--red);color:#fff;font-size:.7rem;font-weight:700;padding:5px 9px;border-radius:6px}
+    .pf-more{text-align:center;margin-top:24px}
+    @media(max-width:760px){.pf-strip{grid-template-columns:repeat(3,1fr)}}
+
+    .clients{padding:84px 0 10px}
+    .client-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+    .client-tile{border:1px solid var(--line);border-radius:12px;background:#fff;min-height:104px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;text-align:center}
+    .client-tile img{max-height:56px;max-width:86%;object-fit:contain;display:block}
+    .client-text b{font:800 1.28rem 'Manrope';letter-spacing:.02em;color:var(--ink)}
+    .client-text span{font-size:.8rem;color:var(--muted);margin-top:3px}
+    .client-note{text-align:center;color:var(--muted);font-size:.92rem;margin-top:22px}
+    @media(max-width:900px){.client-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:560px){.client-grid{grid-template-columns:repeat(2,1fr)}}
+
 
 .art-site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 .art-header-inner{display:flex;align-items:center;gap:28px;padding:14px 0}
 .art-brand img{display:block;height:44px;width:auto}
-.art-nav{display:flex;gap:22px;margin-left:auto}
+.art-nav{display:flex;gap:22px;margin-left:auto;align-items:center}
 .art-nav a{color:var(--ink);font-weight:600;font-size:.95rem;text-decoration:none}
 .art-nav a:hover,.art-nav a.active{color:var(--red)}
+.art-drop{position:relative}
+.art-drop>a{display:inline-flex;align-items:center;gap:6px}
+.art-chev{width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);display:inline-block}
+.art-dropdown{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 18px 40px rgba(16,17,19,.13);padding:8px;min-width:258px;display:none;flex-direction:column;gap:2px;z-index:80}
+.art-drop:hover .art-dropdown,.art-drop:focus-within .art-dropdown{display:flex}
+.art-dropdown a{padding:9px 12px;border-radius:7px;white-space:nowrap;font-size:.92rem}
+.art-dropdown a:hover{background:var(--surface);color:var(--red)}
+.art-mobile-nav a.art-sub{padding-left:24px;font-weight:500;font-size:.92rem;color:var(--muted)}
 .art-cta{margin-left:8px}
 .art-menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;font-size:1.3rem;padding:6px 12px;margin-left:auto;cursor:pointer}
 .art-mobile-nav{background:#fff;border-bottom:1px solid var(--line);padding:12px 20px;display:flex;flex-direction:column;gap:4px}
@@ -255,7 +280,24 @@
     </a>
     <nav class="art-nav" aria-label="Navigasi utama">
       <a href="/#beranda">Beranda</a>
-      <a href="/#produk">Produk</a><a href="/#solusi">Solusi</a><a href="/produk/sanitasikita/">SanitasiKita</a>
+      <div class="art-drop"><a href="/#produk">Produk <span class="art-chev" aria-hidden="true"></span></a>
+        <div class="art-dropdown">
+          <a href="/#touchscreen">Mesin Antrian Touchscreen</a>
+          <a href="/#tombol">Mesin Antrian Tombol</a>
+          <a href="/#signage">Display &amp; Signage Antrian</a>
+          <a href="/#software">Software SmartAntri Suite</a>
+          <a href="/produk/sanitasikita/">SanitasiKita — Survei Kepuasan</a>
+        </div>
+      </div>
+      <div class="art-drop"><a href="/#solusi">Solusi <span class="art-chev" aria-hidden="true"></span></a>
+        <div class="art-dropdown">
+          <a href="/#perbankan">Perbankan</a>
+          <a href="/#kesehatan">Rumah Sakit &amp; Klinik</a>
+          <a href="/#pendidikan">Pendidikan</a>
+          <a href="/#publik">Layanan Publik</a>
+          <a href="/#ritel">Ritel</a>
+        </div>
+      </div>
       <a href="/#harga">Harga</a>
       <a href="/portofolio/">Portofolio</a>
       <a href="/artikel/" class="active" aria-current="page">Artikel</a>
@@ -266,7 +308,18 @@
   </div>
   <nav class="art-mobile-nav" hidden>
     <a href="/#beranda">Beranda</a>
-    <a href="/#produk">Produk</a><a href="/#solusi">Solusi</a><a href="/produk/sanitasikita/">SanitasiKita</a>
+    <a href="/#produk">Produk</a>
+    <a class="art-sub" href="/#touchscreen">Mesin Antrian Touchscreen</a>
+    <a class="art-sub" href="/#tombol">Mesin Antrian Tombol</a>
+    <a class="art-sub" href="/#signage">Display &amp; Signage Antrian</a>
+    <a class="art-sub" href="/#software">Software SmartAntri Suite</a>
+    <a class="art-sub" href="/produk/sanitasikita/">SanitasiKita — Survei Kepuasan</a>
+    <a href="/#solusi">Solusi</a>
+    <a class="art-sub" href="/#perbankan">Perbankan</a>
+    <a class="art-sub" href="/#kesehatan">Rumah Sakit &amp; Klinik</a>
+    <a class="art-sub" href="/#pendidikan">Pendidikan</a>
+    <a class="art-sub" href="/#publik">Layanan Publik</a>
+    <a class="art-sub" href="/#ritel">Ritel</a>
     <a href="/#harga">Harga</a>
     <a href="/portofolio/">Portofolio</a>
     <a href="/artikel/">Artikel</a>
