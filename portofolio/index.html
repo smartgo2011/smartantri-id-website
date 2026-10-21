@@ -182,6 +182,16 @@
     .pf-more{text-align:center;margin-top:24px}
     @media(max-width:760px){.pf-strip{grid-template-columns:repeat(3,1fr)}}
 
+    .clients{padding:84px 0 10px}
+    .client-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+    .client-tile{border:1px solid var(--line);border-radius:12px;background:#fff;min-height:104px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;text-align:center}
+    .client-tile img{max-height:46px;max-width:84%;object-fit:contain;display:block}
+    .client-text b{font:800 1.28rem 'Manrope';letter-spacing:.02em;color:var(--ink)}
+    .client-text span{font-size:.8rem;color:var(--muted);margin-top:3px}
+    .client-note{text-align:center;color:var(--muted);font-size:.92rem;margin-top:22px}
+    @media(max-width:900px){.client-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:560px){.client-grid{grid-template-columns:repeat(2,1fr)}}
+
 .art-site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 .art-header-inner{display:flex;align-items:center;gap:28px;padding:14px 0}
 .art-brand img{display:block;height:44px;width:auto}
@@ -353,6 +363,21 @@
     <div class="stat"><b>20</b><span>unit — BRI Cabang Kendal</span></div>
     <div class="stat"><b>38</b><span>kantor — BRI Kanwil Manado</span></div>
     <div class="stat"><b>2011</b><span>mulai melayani</span></div>
+  </div>
+
+  <div style="margin-top:44px">
+    <p class="eyebrow">Klien Kami</p>
+    <h2 style="font-size:clamp(1.5rem,3vw,2.1rem)">Dipercaya instansi &amp; perusahaan di berbagai daerah</h2>
+    <div class="client-grid">
+      <div class="client-tile"><img src="/assets/klien/bri.png" alt="Logo BRI — Bank Rakyat Indonesia" loading="lazy"></div>
+      <div class="client-tile"><img src="/assets/klien/bpjs-kesehatan.png" alt="Logo BPJS Kesehatan" loading="lazy"></div>
+      <div class="client-tile client-text"><b>Bank SulutGo</b></div>
+      <div class="client-tile client-text"><b>ASTON</b><span>Hotel Gorontalo</span></div>
+      <div class="client-tile client-text"><b>CITIMALL</b><span>Gorontalo</span></div>
+      <div class="client-tile client-text"><b>MTC</b><span>Mega Trade Centre · Manado</span></div>
+      <div class="client-tile client-text"><b>OMART</b><span>Gorontalo</span></div>
+    </div>
+    <p class="client-note">…dan berbagai instansi pemerintah, rumah sakit, klinik, serta perusahaan lainnya di Jawa Tengah, Sulawesi, dan Maluku Utara.</p>
   </div>
 
   <div class="pf-filter" role="group" aria-label="Filter dokumentasi">
